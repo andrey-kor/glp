@@ -1,0 +1,33 @@
+.table__holder{
+    /* height: 100vh; */
+    overflow-y: scroll;
+
+
+}
+
+.table__holder table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+}
+
+.table__holder th {
+    border: 1px solid #E4E9EB;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.table__holder td{
+    border: 1px solid #E4E9EB;
+
+}
+
+.table__holder tbody tr:nth-child(2n){
+    background: #F5F5F5;
+}
+
+
+
+

@@ -1,0 +1,34 @@
+.main-window{
+    /* box-shadow: -5px -5px -5px #000000 inset; */
+    box-shadow: 5px 5px 5px -5px #a3a3a3 inset;
+    margin-left: 170px;
+    height: 100vh;
+}
+
+.new-order-button__wrapper{
+    padding: 16px;
+}
+
+.new-order-button{
+    height: 40px;
+    width: 232px;
+    border-radius: 8px;
+    background: #FFE837;
+    position: relative;
+    font-size: 14px;
+    color: #58595B;
+    margin-bottom: 16px;
+}
+
+.new-order span::before{
+    content: "+";
+    position: absolute;
+    left: 30px; 
+}
+
+.decoration{
+    width: 100%;
+    height: 1px;
+    background: #C4C4C4;
+}
+
