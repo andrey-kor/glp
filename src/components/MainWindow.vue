@@ -5,7 +5,7 @@
             <div class="decoration"></div>
         </div>
         <FilterForm />
-        <Table />
+        <Table v-bind:orders="orders" />
     </div>
 </template>
 
@@ -14,6 +14,7 @@
   import Table from '@/components/Table.vue'
 
   export default {
+    props: ['orders'],
     components: {
         FilterForm, Table
     }

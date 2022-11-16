@@ -1,0 +1,36 @@
+.order-state{
+    display: inline-block;
+    width: 96px;
+    height: 18px;
+    border-radius: 16px;
+}
+
+.state_unaccepted{
+    background: #FF9800;
+    color:#F5F6FA;
+}
+
+.state_new{
+    background: #FFBF00;
+    color:#F5F6FA;
+}
+
+.state_work{
+    background: #326BFF;
+    color:#F5F6FA;
+}
+
+.state_reject{
+    background: #F94C40;
+    color:#F5F6FA;
+}
+
+.state_cancell{
+    background: #F94C40;
+    color:#F5F6FA;
+}
+
+.state_completed{
+    background: #2DCA89;
+    color:#F5F6FA;
+}

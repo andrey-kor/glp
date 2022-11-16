@@ -1,12 +1,11 @@
 .table__holder{
-    /* height: 100vh; */
+    /* height: 100vh;  */
     overflow-y: scroll;
 
 
 }
 
 .table__holder table {
-    table-layout: fixed;
     border-collapse: collapse;
     text-align: center;
     width: 100%;
@@ -17,17 +16,47 @@
     border: 1px solid #E4E9EB;
     font-size: 12px;
     line-height: 14px;
+    height: 40px;
 }
 
 .table__holder td{
     border: 1px solid #E4E9EB;
-
+    height: 40px;
 }
 
 .table__holder tbody tr:nth-child(2n){
     background: #F5F5F5;
 }
 
+.order-path span::before{
+    content: url('../img/map-point-icon.png');
+    position: relative;
+    left: -10px;
+}
 
+.order-path img{
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
+.processing-note{
+    position: absolute;
+    top: 10px;
+    left: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.processing-note img{
+    margin-left: 20px;
+}
+
+.executor-note{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
 

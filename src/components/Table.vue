@@ -17,49 +17,30 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Новый</td>
-                    <td>20.07.2021</td>
-                    <td>1,5 т</td>
-                    <td>Изотерма</td>
-                    <td>125548031</td>
-                    <td>Склад загрузки --- Магазин на ул.Ленина</td>
-                    <td>Идет подбор исполнителя</td>
-                    <td>GPS</td>
-                    <td>Документы</td>
-                    <td>20 800 ₽</td>
-                    <td>Не оплачен</td>
-                </tr>
-                <tr>
-                    <td>Новый</td>
-                    <td>20.07.2021</td>
-                    <td>1,5 т</td>
-                    <td>Изотерма</td>
-                    <td>125548031</td>
-                    <td>Склад загрузки --- Магазин на ул.Ленина</td>
-                    <td>Магомедов Магомед Магомедович</td>
-                    <td>GPS</td>
-                    <td>Документы</td>
-                    <td>20 800 ₽</td>
-                    <td>Не оплачен</td>
-                </tr>
-                <tr>
-                    <td>Новый</td>
-                    <td>20.07.2021</td>
-                    <td>1,5 т</td>
-                    <td>Изотерма</td>
-                    <td>125548031</td>
-                    <td>Склад загрузки --- Магазин на ул.Ленина</td>
-                    <td>Магомедов Магомед Магомедович</td>
-                    <td>GPS</td>
-                    <td>Документы</td>
-                    <td>20 800 ₽</td>
-                    <td>Не оплачен</td>
-                </tr>
+                <TableString 
+                    v-for="order of orders"
+                    v-bind:order="order"
+                />
             </tbody>
         </table>
     </div>
 </template>
+
+<script>
+    import TableString from '@/components/TableString.vue'
+
+    export default {
+        props: {
+            orders: {
+                type: Array,
+                required: true
+            }
+        },
+        components: {
+            TableString
+        }
+    }
+</script>
 
 <style>
     @import url('../styles/Table.css');

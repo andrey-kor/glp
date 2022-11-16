@@ -2,7 +2,7 @@
   <div>
     <Header />
     <RightMenu />
-    <MainWindow />
+    <MainWindow v-bind:orders="orders"/>
   </div>
 </template>
 
@@ -10,8 +10,15 @@
   import Header from '@/components/Header.vue'
   import RightMenu from '@/components/RightMenu.vue'
   import MainWindow from '@/components/MainWindow.vue'
+  import orders from './data/orders.json'
+
   export default {
     name: 'App',
+    data() {
+      return {
+        orders
+      }
+    },  
     components: {
       Header, RightMenu, MainWindow
     }
