@@ -1,7 +1,6 @@
 .table__holder{
-    /* height: 100vh;  */
+    height: 70vh; 
     overflow-y: scroll;
-
 
 }
 

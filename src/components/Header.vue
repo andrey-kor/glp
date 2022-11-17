@@ -8,7 +8,6 @@
             </div>
             <div class="conpany-info__logo"></div>
         </div>
-
     </div>
 </template>
 

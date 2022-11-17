@@ -9,44 +9,44 @@
                 с назначенными исполнителями 
                 <img src="../img/process-icon.png"/>
             </div>
-            {{ order.Date }}
+            {{ order.date }}
         </td>
         <td>
-            {{ order.Weight }}
+            {{ order.weight }}
         </td>
         <td>
-            {{ order.Type }}
+            {{ order.type }}
         </td>
         <td>
-            {{ order.OrderNum }}
+            {{ order.orderNum }}
         </td>
         <td>
             <OrderPath 
                 v-if="order.accepted"
-                v-bind:path="{A: order.PointA , B: order.PointB}"
+                v-bind:path="{A: order.pointA , B: order.pointB}"
             />
         </td>
         <td >
             <div class="executor-note">
-                {{ order.Executor }}
-                <img v-if="order.Executor === 'Идет подбор исполнителя' && order.accepted" src="../img/process-icon.png"/>
+                {{ order.executor }}
+                <img v-if="order.executor === 'Идет подбор исполнителя' && order.accepted" src="../img/process-icon.png"/>
                 <img v-else-if="order.accepted" src="../img/cp-icon.png"/>
             </div>
         </td>
         <td>
-            <img v-if="order.GPS && order.accepted" src="../img/track-icon.png"/>
-            <img v-if="!order.GPS && order.accepted" src="../img/location-icon.png"/>
+            <img v-if="order.gps && order.accepted" src="../img/track-icon.png"/>
+            <img v-if="!order.gps && order.accepted" src="../img/location-icon.png"/>
         </td>
         <td>
-            <img v-if="order.Documents && order.accepted" src="../img/file-icon.png"/>
-            <img v-if="!order.Documents && order.accepted" src="../img/no-file-icon.png"/>
+            <img v-if="order.documents && order.accepted" src="../img/file-icon.png"/>
+            <img v-if="!order.documents && order.accepted" src="../img/no-file-icon.png"/>
         </td>
         <td>
-            {{ order.Cost }} 
-            <span v-if="order.Cost">₽</span>
+            {{ order.cost }} 
+            <span v-if="order.cost">₽</span>
         </td>
         <td>
-            {{ order.Payment }}
+            <PayState v-bind:order="order"/>
         </td>
     </tr>
 </template>
@@ -54,10 +54,11 @@
 <script>
     import OrderState from './OrderState.vue'
     import OrderPath from './OrderPath.vue'
+    import PayState from './PayState.vue'
 
     export default {
         components: {
-            OrderState, OrderPath
+            OrderState, OrderPath, PayState
         },
         props: {
             order: {

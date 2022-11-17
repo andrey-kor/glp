@@ -20,6 +20,7 @@
                 <TableString 
                     v-for="order of orders"
                     v-bind:order="order"
+                    :key="order.id"
                 />
             </tbody>
         </table>
