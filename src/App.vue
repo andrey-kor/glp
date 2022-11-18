@@ -2,7 +2,7 @@
   <div>
     <Header />
     <RightMenu />
-    <MainWindow v-bind:orders="orders"/>
+    <MainWindow :orders="orders"/>
   </div>
 </template>
 

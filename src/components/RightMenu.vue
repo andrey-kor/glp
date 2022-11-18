@@ -12,10 +12,9 @@
         <hr />
         <div class="page-contacts">
             Ваш менеджер: Зезюлько Сергей <br>
-            +7 (929) 939-28-00<br>
+            <a href="tel: +79299392800*">+7 (929) 939-28-00</a><br>
             <br>
             <a href="mailto:d2@tkglp.ru" target="_blank">d2@tkglp.ru</a>
-
         </div>
     </div>
 </template>

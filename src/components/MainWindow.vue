@@ -9,9 +9,9 @@
         </div>
         <FilterForm 
             @sortOrders="sortOrders"
-            v-bind="{totalCount, todayCount, tomorrowCount}"
+            :="{totalCount, todayCount, tomorrowCount}"
         />
-        <Table v-bind:orders="filteredOrders" />
+        <Table :orders="filteredOrders" />
     </div>
 </template>
 

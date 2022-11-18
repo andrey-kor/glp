@@ -1,7 +1,7 @@
 <template>
     <tr style="position:relative">
         <td>
-            <OrderState v-bind:order="order"/>
+            <OrderState :order="order"/>
         </td>
         <td>
             <div v-if="!order.accepted" class="processing-note">
@@ -13,6 +13,7 @@
         </td>
         <td>
             {{ order.weight }}
+            <span v-if="order.weight">т.</span>
         </td>
         <td>
             {{ order.type }}
@@ -23,7 +24,7 @@
         <td>
             <OrderPath 
                 v-if="order.accepted"
-                v-bind:path="{A: order.pointA , B: order.pointB}"
+                :path="{A: order.pointA , B: order.pointB}"
             />
         </td>
         <td >
@@ -46,7 +47,7 @@
             <span v-if="order.cost">₽</span>
         </td>
         <td>
-            <PayState v-bind:order="order"/>
+            <PayState :order="order"/>
         </td>
     </tr>
 </template>
