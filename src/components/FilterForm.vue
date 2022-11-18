@@ -5,7 +5,7 @@
                 type="text" 
                 placeholder="Поиск"
                 v-model="searchTextValue"
-                @input="$emit('sortOrders', {filterType: 'textArea', value: searchTextValue})"
+                @input="$emit('sortOrders', setTextValue(searchTextValue))"
             />
         </div>
         <div class="form-date">
@@ -13,27 +13,32 @@
                 type="text" 
                 placeholder="11.11.2021 - 11.11.2021"
                 v-model="searchDateValue"
-                @input="$emit('sortOrders', {filterType: 'dataArea', value: searchDateValue})"
+                @input="$emit('sortOrders', setDateValue(searchDateValue))"
             />
         </div>
         <div class="daily-filters">
-            <div class="daily-all daily_active">
+            <div class="daily-all" 
+                :class="{daily_active: this.filters[2].value === 'all'}">
                 <a href="/"
-                    @:click.prevent="$emit('sortOrders', {filterType: 'all'})"
+                    @click.prevent="$emit('sortOrders', setDayValue('all'))"
                 >Все заказы</a>
-                <span>15</span>
+                <span>{{totalCount || 0}}</span>
             </div>
-            <div class="daily-today">
+            <div class="daily-today" 
+                :class="{daily_active: this.filters[2].value === 'today'}"   
+            >
                 <a href="/"
-                    @:click.prevent="$emit('sortOrders', {filterType: 'today'})"
+                    @click.prevent="$emit('sortOrders', setDayValue('today'))"
                 >Заказы на сегодня</a>
-                <span>15</span>
+                <span>{{todayCount || 0}}</span>
             </div>
-            <div class="daily-tomorrow">
+            <div class="daily-tomorrow"
+                :class="{daily_active: this.filters[2].value === 'tomorrow'}"
+            >
                 <a href="/"
-                    @:click.prevent="$emit('sortOrders', {filterType: 'tomorrow'})"
+                    @click.prevent="$emit('sortOrders', setDayValue('tomorrow'))"
                 >Заказы на завтра</a>
-                <span>15</span>
+                <span>{{tomorrowCount || 0}}</span>
             </div>
         </div>
     </div>
@@ -41,14 +46,41 @@
 
 <script>
     export default {
+        props: {
+            totalCount: {
+                type: Number,
+            },
+            todayCount: {
+                type: Number,
+            },
+            tomorrowCount: {
+                type: Number,
+            }
+        },
         data() {
             return {
+                filters: [
+                    {filter: 'textArea', value: ''},
+                    {filter: 'dataArea', value: ''},
+                    {filter: 'day', value: 'all'},
+                ],
                 searchTextValue: '',
                 searchDateValue: ''
             }
         },
         methods: {
-            
+            setTextValue(value) {
+                this.filters[0].value = value
+                return this.filters 
+            },
+            setDateValue(value) {
+                this.filters[1].value = value
+                return this.filters 
+            },
+            setDayValue(value) {
+                this.filters[2].value = value
+                return this.filters 
+            }
         }
     }
 </script>

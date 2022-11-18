@@ -52,15 +52,17 @@
 .daily-filters > div span{
     position: relative;
     display: inline-block;
-    bottom: 0.5em;
+    bottom: 1em;
     right: -10px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 1px;
     border: 1px solid #000;
-    border-radius: 50%;
-    min-width: 1.2em;
-    height: 1.2em;
+    border-radius: 10px;
     text-align: center;
+    font-size: 12px;
+    line-height: 18px;
     font-weight: 400;
-
 }
 
 .daily_active span{

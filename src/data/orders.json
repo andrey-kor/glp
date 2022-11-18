@@ -382,5 +382,21 @@
         "documents": true,
         "cost": 20800,
         "payment": "Оплачен"
+    },
+    {
+        "id": 24,
+        "accepted": true,
+        "state": "Новый",
+        "date": "18.11.2022",
+        "weight": "1.5",
+        "type": "Изотерма",
+        "orderNum": 125548031,
+        "pointA": "Склад загрузки",
+        "pointB": "Магазин на ул.Ленина",
+        "executor": "Магомедов Магомед Магомедович",
+        "gps": false,
+        "documents": true,
+        "cost": 20800,
+        "payment": "Оплачен"
     }
 ]

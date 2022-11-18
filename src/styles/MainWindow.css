@@ -17,12 +17,14 @@
     font-size: 14px;
     color: #58595B;
     margin-bottom: 16px;
+    font-weight: 700;
 }
 
-.new-order span::before{
+.new-order-button span::before{
     content: "+";
     position: absolute;
     left: 30px; 
+    font-weight: 700;
 }
 
 .decoration{
